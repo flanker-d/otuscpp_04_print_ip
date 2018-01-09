@@ -1,7 +1,4 @@
 language: cpp
-before_script:
- - sudo add-apt-repository ppa:kedazo/doxygen-updates-precise
- - sudo apt-get update -qq
 branches:
   except:
     - gh-pages
