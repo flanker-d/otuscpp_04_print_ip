@@ -17,11 +17,11 @@ addons:
       - libboost-test-dev
       - g++-5
 script:
-- pwd
-- cmake .
-- cmake --build .
-- cmake --build . --target test
-- cmake --build . --target package
+  - pwd
+  - cmake .
+  - cmake --build .
+  - cmake --build . --target test
+  - cmake --build . --target package
 compiler: g++
 deploy:
   provider: script
@@ -31,6 +31,7 @@ deploy:
 after_success:
   - cd $TRAVIS_BUILD_DIR
   - doxygen -g print_ip.dox
+  - doxygen print_ip.dox
   - chmod +x deploy_documentation.sh
   - ./deploy_documentation.sh
   
