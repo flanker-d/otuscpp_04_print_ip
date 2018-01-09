@@ -49,7 +49,7 @@ int main()
 
   //list<int>
   std::list<std::string> s_int = {"10", "20", "30", "40", "50"};
-  print_ip(l_int);
+  print_ip(s_int);
 
 
   //list<string>
