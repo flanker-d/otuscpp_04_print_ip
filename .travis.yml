@@ -29,6 +29,7 @@ deploy:
   - curl -T print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uflanker-d:$BINTRAY_API_KEY "https://api.bintray.com/content/flankerd/otuscpp/04_print_ip/$TRAVIS_BUILD_NUMBER/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
 after_success:
   - cd $TRAVIS_BUILD_DIR
+  - doxygen -g print_ip.dox
   - chmod +x deploy_documentation.sh
   - ./deploy_documentation.sh
   
