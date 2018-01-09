@@ -7,10 +7,14 @@
 
 var indexSectionsWithContent =
 {
+  0: "gis",
+  1: "gis"
 };
 
 var indexSectionNames =
 {
+  0: "all",
+  1: "classes"
 };
 
 function convertToId(search)
