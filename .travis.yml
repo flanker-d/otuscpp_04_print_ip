@@ -9,6 +9,8 @@ env:
     - GH_REPO_REF: github.com/flanker-d/otuscpp_04_print_ip.git
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
       - doxygen
       - doxygen-doc
