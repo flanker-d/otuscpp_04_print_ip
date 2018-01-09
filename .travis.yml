@@ -11,6 +11,7 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
+      - kedazo/doxygen-updates-precise
     packages:
       - doxygen
       - graphviz
