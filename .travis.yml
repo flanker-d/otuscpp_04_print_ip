@@ -17,6 +17,7 @@ addons:
       - libboost-test-dev
       - g++-5
 script:
+- pwd
 - cmake .
 - cmake --build .
 - cmake --build . --target test
