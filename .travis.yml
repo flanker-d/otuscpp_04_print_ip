@@ -1,4 +1,7 @@
 language: cpp
+before_script:
+ - sudo add-apt-repository ppa:kedazo/doxygen-updates-precise
+ - sudo apt-get update -qq
 branches:
   except:
     - gh-pages
@@ -11,7 +14,6 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - kedazo/doxygen-updates-precise
     packages:
       - doxygen
       - graphviz
