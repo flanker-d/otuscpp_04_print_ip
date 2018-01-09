@@ -13,8 +13,7 @@ echo 'Setting up the script...'
 set -e
 
 doxygen -g print_ip.dox
-doxygen print_ip.dox
-( cat print_ip.dox ; echo "PROJECT_NAME=Print_IP" ) | doxygen -
+( cat print_ip.dox ; echo "PROJECT_NAME=\"Print IP\"" ) | doxygen -
 
 mkdir code_docs
 cd code_docs
