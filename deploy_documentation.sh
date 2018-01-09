@@ -12,6 +12,9 @@ __AUTHOR__="Artyom Sorokoumov"
 echo 'Setting up the script...'
 set -e
 
+doxygen -g print_ip.dox
+( cat print_ip.dox ; echo "PROJECT_NAME=Print_IP" ) | doxygen -
+
 mkdir code_docs
 cd code_docs
 
@@ -29,7 +32,6 @@ echo "TRAVIS_BUILD_DIR = $TRAVIS_BUILD_DIR"
 
 if [ -d "../../html" ] && [ -f "../../html/index.html" ]; then
     cp -rv ../../html/* .
-    ls
     echo 'Uploading documentation to the gh-pages branch...'
     git add --all
     git commit -m "Deploy code docs to GitHub Pages Travis build: ${TRAVIS_BUILD_NUMBER}" -m "Commit: ${TRAVIS_COMMIT}"
