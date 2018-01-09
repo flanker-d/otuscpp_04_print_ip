@@ -4,7 +4,6 @@ __AUTHOR__="Artyom Sorokoumov"
 # Required global variables:
 # - TRAVIS_BUILD_NUMBER : The number of the current build.
 # - TRAVIS_COMMIT       : The commit that the current build is testing.
-# - DOXYFILE            : The Doxygen configuration file.
 # - GH_REPO_NAME        : The name of the repository.
 # - GH_REPO_REF         : The GitHub reference to the repository.
 # - GH_REPO_TOKEN       : Secure token to the github repository.

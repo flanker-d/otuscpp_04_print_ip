@@ -5,7 +5,6 @@ branches:
 env:
   global:
     - GH_REPO_NAME: otuscpp_04_print_ip
-    - DOXYFILE: $TRAVIS_BUILD_DIR/print_ip.dox
     - GH_REPO_REF: github.com/flanker-d/otuscpp_04_print_ip.git
 addons:
   apt:
@@ -13,6 +12,9 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
       - graphviz
       - libboost-test-dev
       - g++-5
