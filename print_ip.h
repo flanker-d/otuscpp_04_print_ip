@@ -52,7 +52,7 @@ struct is_one_of<T, U, Args...> : is_one_of<T, Args...> {};
 
 //! Template print_ip taking one argument which is one of integer type and print it as ip-address (bytes sepated by dots).
 /*!
-  \param ip an integer argument.
+  \param[in] ip an integer argument.
 */
 template <typename T>
 void print_ip(const T& ip)
@@ -73,7 +73,7 @@ void print_ip(const T& ip)
 
 //! Template print_ip taking one argument which is one of std::vector or std::list type and print it as ip-address (bytes sepated by dots).
 /*!
-  \param ip an std::vector or std::list argument.
+  \param[in] ip an std::vector or std::list argument.
 */
 template<template<typename, typename> class T, typename U>
 void print_ip(const T<U, std::allocator<U>>& ip)
@@ -143,9 +143,9 @@ struct gen_seq<0, Is...> : seq<Is...>
 
 //! Template print_tuple taking three arguments (one of these parameters is a tuple) and print it as ip-address (bytes sepated by dots).
 /*!
-  \param os an std::basic_ostream<> argument, such as std::cout.
-  \param t a std::tuple argument, it's ip address.
-  \param seq<Is...> a metaprogramming-generated sequence of integer numbers (0..N) argument, it's according to tuple indexes.
+  \param[out] os an std::basic_ostream<> argument, such as std::cout.
+  \param[in] t a std::tuple argument, it's ip address.
+  \param[in] seq<Is...> a metaprogramming-generated sequence of integer numbers (0..N) argument, it's according to tuple indexes.
 */
 template<typename Ch, typename Tr, typename Tuple, std::size_t... Is>
 void print_tuple(std::basic_ostream<Ch,Tr>& os, Tuple const& t, seq<Is...>)
@@ -156,8 +156,8 @@ void print_tuple(std::basic_ostream<Ch,Tr>& os, Tuple const& t, seq<Is...>)
 
 //! Overloaded operator "<<" template taking two arguments (one of these parameters is a tuple) and put it to std output.
 /*!
-  \param os an std::basic_ostream<> argument, such as std::cout.
-  \param t a std::tuple argument, it's ip address.
+  \param[out] os an std::basic_ostream<> argument, such as std::cout.
+  \param[in] t a std::tuple argument, it's ip address.
   \return std::basic_ostream<> variable
 */
 template<typename Ch, typename Tr, typename... Args>
@@ -200,7 +200,7 @@ struct is_all_of<T, T, Args...> : is_all_of<T, Args...> {};
 
 //! Template print_ip taking one tuple-parameter.
 /*!
-  \param ip a std::tuple argument, it's ip address.
+  \param[in] ip a std::tuple argument, it's ip address.
 */
 template<typename... Args>
 void print_ip(std::tuple<Args...> const& ip)
