@@ -36,7 +36,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github-token: $GH_REPO_TOKEN
+  local-dir: html
   keep-history: true
-  local-dir: $TRAVIS_BUILD_DIR/html
   on:
     branch: master
