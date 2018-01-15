@@ -1,10 +1,10 @@
-Start testing: Jan 15 10:00 UTC
+Start testing: Jan 15 10:19 UTC
 ----------------------------------------------------------
 1/1 Testing: funcs_tests
 1/1 Test: funcs_tests
 Command: "/home/travis/build/flanker-d/otuscpp_04_print_ip/funcs_tests"
 Directory: /home/travis/build/flanker-d/otuscpp_04_print_ip
-"funcs_tests" start time: Jan 15 10:00 UTC
+"funcs_tests" start time: Jan 15 10:19 UTC
 Output:
 ----------------------------------------------------------
 Running 1 test case...
@@ -14,8 +14,8 @@ Running 1 test case...
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"funcs_tests" end time: Jan 15 10:00 UTC
+"funcs_tests" end time: Jan 15 10:19 UTC
 "funcs_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jan 15 10:00 UTC
+End testing: Jan 15 10:19 UTC

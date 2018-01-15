@@ -1,2 +1,2 @@
-funcs_tests 1 0.00296211
+funcs_tests 1 0.00334096
 ---
