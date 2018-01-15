@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,7 +81,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">print_ip.h File Reference</div>  </div>
 </div><!--header-->
@@ -138,14 +139,22 @@ Functions</h2></td></tr>
 <tr class="memitem:ae64f17a84dc9c7144d1036498ff26fd9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ae64f17a84dc9c7144d1036498ff26fd9">version</a> ()</td></tr>
 <tr class="memdesc:ae64f17a84dc9c7144d1036498ff26fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">version function.  <a href="#ae64f17a84dc9c7144d1036498ff26fd9">More...</a><br/></td></tr>
 <tr class="separator:ae64f17a84dc9c7144d1036498ff26fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af96848427ee2ef94ead7a812dbfbe9a5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af96848427ee2ef94ead7a812dbfbe9a5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#af96848427ee2ef94ead7a812dbfbe9a5">print_ip</a> (const T &amp;ip)</td></tr>
-<tr class="memdesc:af96848427ee2ef94ead7a812dbfbe9a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_ip taking one argument which is one of integer type and print it as ip-address (bytes sepated by dots).  <a href="#af96848427ee2ef94ead7a812dbfbe9a5">More...</a><br/></td></tr>
-<tr class="separator:af96848427ee2ef94ead7a812dbfbe9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66a04339c6221dfea7f4e4b09000ea5"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename, typename &gt; class T, typename U &gt; </td></tr>
-<tr class="memitem:ae66a04339c6221dfea7f4e4b09000ea5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ae66a04339c6221dfea7f4e4b09000ea5">print_ip</a> (const T&lt; U, std::allocator&lt; U &gt;&gt; &amp;ip)</td></tr>
-<tr class="memdesc:ae66a04339c6221dfea7f4e4b09000ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_ip taking one argument which is one of std::vector or std::list type and print it as ip-address (bytes sepated by dots).  <a href="#ae66a04339c6221dfea7f4e4b09000ea5">More...</a><br/></td></tr>
-<tr class="separator:ae66a04339c6221dfea7f4e4b09000ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf19367a3ba874c55a1071c86cfa774e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aaf19367a3ba874c55a1071c86cfa774e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a><br class="typebreak"/>
+&lt; T, std::int8_t, std::uint8_t, <br class="typebreak"/>
+std::int16_t, std::uint16_t, <br class="typebreak"/>
+std::int32_t, std::uint32_t, <br class="typebreak"/>
+std::int64_t, std::uint64_t &gt;<br class="typebreak"/>
+, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#aaf19367a3ba874c55a1071c86cfa774e">print_ip</a> (const T &amp;ip)</td></tr>
+<tr class="memdesc:aaf19367a3ba874c55a1071c86cfa774e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_ip taking one argument which is one of integer type and print it as ip-address (bytes sepated by dots).  <a href="#aaf19367a3ba874c55a1071c86cfa774e">More...</a><br/></td></tr>
+<tr class="separator:aaf19367a3ba874c55a1071c86cfa774e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da9671c7dca68b86537a8de5cf0898c"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename, typename &gt; class T, typename U &gt; </td></tr>
+<tr class="memitem:a8da9671c7dca68b86537a8de5cf0898c"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a><br class="typebreak"/>
+&lt; T&lt; U, std::allocator&lt; U &gt;<br class="typebreak"/>
+ &gt;, std::vector&lt; U &gt;<br class="typebreak"/>
+, std::list&lt; U &gt; &gt;, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a8da9671c7dca68b86537a8de5cf0898c">print_ip</a> (const T&lt; U, std::allocator&lt; U &gt;&gt; &amp;ip)</td></tr>
+<tr class="memdesc:a8da9671c7dca68b86537a8de5cf0898c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_ip taking one argument which is one of std::vector or std::list type and print it as ip-address (bytes sepated by dots).  <a href="#a8da9671c7dca68b86537a8de5cf0898c">More...</a><br/></td></tr>
+<tr class="separator:a8da9671c7dca68b86537a8de5cf0898c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab22855dd4e319ef4b17b7c303f097ec"><td class="memTemplParams" colspan="2">template&lt;typename Ch , typename Tr , typename Tuple , std::size_t... Is&gt; </td></tr>
 <tr class="memitem:aab22855dd4e319ef4b17b7c303f097ec"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#aab22855dd4e319ef4b17b7c303f097ec">print_tuple</a> (std::basic_ostream&lt; Ch, Tr &gt; &amp;os, Tuple const &amp;t, <a class="el" href="structseq.html">seq</a>&lt; Is...&gt;)</td></tr>
 <tr class="memdesc:aab22855dd4e319ef4b17b7c303f097ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_tuple taking three arguments (one of these parameters is a tuple) and print it as ip-address (bytes sepated by dots).  <a href="#aab22855dd4e319ef4b17b7c303f097ec">More...</a><br/></td></tr>
@@ -154,10 +163,24 @@ Functions</h2></td></tr>
 <tr class="memitem:a2c4f4bc09a3bd265112bc2774b86341c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a2c4f4bc09a3bd265112bc2774b86341c">operator&lt;&lt;</a> (std::basic_ostream&lt; Ch, Tr &gt; &amp;os, std::tuple&lt; Args...&gt; const &amp;t) -&gt; std::basic_ostream&lt; Ch, Tr &gt; &amp;</td></tr>
 <tr class="memdesc:a2c4f4bc09a3bd265112bc2774b86341c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded operator "&lt;&lt;" template taking two arguments (one of these parameters is a tuple) and put it to std output.  <a href="#a2c4f4bc09a3bd265112bc2774b86341c">More...</a><br/></td></tr>
 <tr class="separator:a2c4f4bc09a3bd265112bc2774b86341c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a966fdb890a982a3444ec803cbebfecb3"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a966fdb890a982a3444ec803cbebfecb3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a966fdb890a982a3444ec803cbebfecb3">print_ip</a> (std::tuple&lt; Args...&gt; const &amp;ip)</td></tr>
-<tr class="memdesc:a966fdb890a982a3444ec803cbebfecb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_ip taking one tuple-parameter.  <a href="#a966fdb890a982a3444ec803cbebfecb3">More...</a><br/></td></tr>
-<tr class="separator:a966fdb890a982a3444ec803cbebfecb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c1450a299777cd37de84f266f5417b"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a49c1450a299777cd37de84f266f5417b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__ip_8h.html#a4e2e58f599cd0aded1b1c451e2bf4ddf">is_all_of_v</a><br class="typebreak"/>
+&lt; Args...&gt;, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a49c1450a299777cd37de84f266f5417b">print_ip</a> (std::tuple&lt; Args...&gt; const &amp;ip)</td></tr>
+<tr class="memdesc:a49c1450a299777cd37de84f266f5417b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_ip taking one tuple-parameter.  <a href="#a49c1450a299777cd37de84f266f5417b">More...</a><br/></td></tr>
+<tr class="separator:a49c1450a299777cd37de84f266f5417b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a43d3c463d00de7c3fc5d6e1655f691cd"><td class="memTemplParams" colspan="2"><a class="anchor" id="a43d3c463d00de7c3fc5d6e1655f691cd"></a>
+template&lt;typename T , typename U , typename... Args&gt; </td></tr>
+<tr class="memitem:a43d3c463d00de7c3fc5d6e1655f691cd"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a> = <a class="el" href="structis__one__of.html">is_one_of</a>&lt;T, U, Args...&gt;::value</td></tr>
+<tr class="memdesc:a43d3c463d00de7c3fc5d6e1655f691cd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structis__one__of.html" title="is_one_of meta-class. ">is_one_of</a> meta-class value alias. <br/></td></tr>
+<tr class="separator:a43d3c463d00de7c3fc5d6e1655f691cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e2e58f599cd0aded1b1c451e2bf4ddf"><td class="memTemplParams" colspan="2"><a class="anchor" id="a4e2e58f599cd0aded1b1c451e2bf4ddf"></a>
+template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a4e2e58f599cd0aded1b1c451e2bf4ddf"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a4e2e58f599cd0aded1b1c451e2bf4ddf">is_all_of_v</a> = <a class="el" href="structis__all__of.html">is_all_of</a>&lt;T, Args...&gt;::value</td></tr>
+<tr class="memdesc:a4e2e58f599cd0aded1b1c451e2bf4ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structis__all__of.html" title="is_all_of meta-class. ">is_all_of</a> meta-class value alias. <br/></td></tr>
+<tr class="separator:a4e2e58f599cd0aded1b1c451e2bf4ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a2c4f4bc09a3bd265112bc2774b86341c"></a>
@@ -199,14 +222,14 @@ template&lt;typename Ch , typename Tr , typename... Args&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="af96848427ee2ef94ead7a812dbfbe9a5"></a>
+<a class="anchor" id="aaf19367a3ba874c55a1071c86cfa774e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void print_ip </td>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a>&lt;T, std::int8_t, std::uint8_t, std::int16_t, std::uint16_t, std::int32_t, std::uint32_t, std::int64_t, std::uint64_t&gt;, void&gt; print_ip </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>ip</em></td><td>)</td>
@@ -225,14 +248,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae66a04339c6221dfea7f4e4b09000ea5"></a>
+<a class="anchor" id="a8da9671c7dca68b86537a8de5cf0898c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;template&lt; typename, typename &gt; class T, typename U &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void print_ip </td>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a>&lt;T&lt;U, std::allocator&lt;U&gt; &gt;, std::vector&lt;U&gt;, std::list&lt;U&gt; &gt;, void&gt; print_ip </td>
           <td>(</td>
           <td class="paramtype">const T&lt; U, std::allocator&lt; U &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>ip</em></td><td>)</td>
@@ -251,14 +274,14 @@ template&lt;template&lt; typename, typename &gt; class T, typename U &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a966fdb890a982a3444ec803cbebfecb3"></a>
+<a class="anchor" id="a49c1450a299777cd37de84f266f5417b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename... Args&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void print_ip </td>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__ip_8h.html#a4e2e58f599cd0aded1b1c451e2bf4ddf">is_all_of_v</a>&lt;Args...&gt;, void&gt; print_ip </td>
           <td>(</td>
           <td class="paramtype">std::tuple&lt; Args...&gt; const &amp;&#160;</td>
           <td class="paramname"><em>ip</em></td><td>)</td>
@@ -342,7 +365,7 @@ template&lt;typename Ch , typename Tr , typename Tuple , std::size_t... Is&gt; <
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 9 2018 16:28:27 for Print IP by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 15 2018 09:41:36 for Print IP by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
