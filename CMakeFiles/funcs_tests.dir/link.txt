@@ -1,1 +1,0 @@
-/usr/bin/g++    -rdynamic CMakeFiles/funcs_tests.dir/tests.cpp.o  -o funcs_tests -lboost_unit_test_framework libprintip.a 

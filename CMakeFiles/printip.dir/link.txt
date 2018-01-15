@@ -1,2 +1,0 @@
-/usr/bin/ar qc libprintip.a  CMakeFiles/printip.dir/print_ip.cpp.o
-/usr/bin/ranlib libprintip.a
