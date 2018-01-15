@@ -32,6 +32,8 @@ int main()
   std::int64_t ip_int64 = ip4_union.int64;
   print_ip(ip_int64);
 
+  //std::string wrong_type = "192.168.0.1";
+  //print_ip(wrong_type);
 
   //vector<int>
   std::vector<int> v_int = {1, 2, 3, 4};
@@ -75,12 +77,12 @@ int main()
   print_ip(tuple_4);
 
   //wrong tuple
-  std::tuple<std::string, int, int, int> wrong_tuple{"185", 195, 66, 99};
-  print_ip(wrong_tuple);
+  //std::tuple<std::string, int, int, int> wrong_tuple{"185", 195, 66, 99};
+  //print_ip(wrong_tuple);
 
   //wrong tuple
-  std::tuple<int, std::string, int, int, int> wrong_tuple_2{11, "185", 22, 33, 44};
-  print_ip(wrong_tuple_2);
+  //std::tuple<int, std::string, int, int, int> wrong_tuple_2{11, "185", 22, 33, 44};
+  //print_ip(wrong_tuple_2);
 
 
   return 0;

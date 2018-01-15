@@ -1,5 +1,4 @@
 /*! \file */
-
 #pragma once
 
 #include "version.h"
@@ -52,25 +51,26 @@ struct is_one_of<T, T, Args...> : std::true_type {};
 template <typename T, typename U, typename... Args>
 struct is_one_of<T, U, Args...> : is_one_of<T, Args...> {};
 
+//!  is_one_of meta-class value alias.
+template <typename T, typename U, typename... Args>
+constexpr bool is_one_of_v = is_one_of<T, U, Args...>::value;
+
 //! Template print_ip taking one argument which is one of integer type and print it as ip-address (bytes sepated by dots).
 /*!
   \param[in] ip an integer argument.
 */
 template <typename T>
-void print_ip(const T& ip)
+std::enable_if_t<is_one_of_v<T, std::int8_t, std::uint8_t, std::int16_t, std::uint16_t, std::int32_t, std::uint32_t, std::int64_t, std::uint64_t>, void> print_ip(const T& ip)
 {
   const int byte_size = 8;
-  if(is_one_of<T, std::int8_t, std::uint8_t, std::int16_t, std::uint16_t, std::int32_t, std::uint32_t, std::int64_t, std::uint64_t>::value)
+  std::size_t bytes = sizeof(T);
+  for(std::size_t i = 0; i < bytes; i++)
   {
-    std::size_t bytes = sizeof(T);
-    for(std::size_t i = 0; i < bytes; i++)
-    {
-      std::cout << ((ip >> (i * byte_size)) & 0xFF);
-      if(i != ((sizeof(T) - 1)))
-        std::cout << ".";
-    }
-    std::cout << std::endl;
+    std::cout << ((ip >> (i * byte_size)) & 0xFF);
+    if(i != ((sizeof(T) - 1)))
+      std::cout << ".";
   }
+  std::cout << std::endl;
 }
 
 //! Template print_ip taking one argument which is one of std::vector or std::list type and print it as ip-address (bytes sepated by dots).
@@ -78,18 +78,15 @@ void print_ip(const T& ip)
   \param[in] ip an std::vector or std::list argument.
 */
 template<template<typename, typename> class T, typename U>
-void print_ip(const T<U, std::allocator<U>>& ip)
+std::enable_if_t<is_one_of_v<T<U, std::allocator<U>>, std::vector<U>, std::list<U>>, void> print_ip(const T<U, std::allocator<U>>& ip)
 {
-  if(is_one_of<T<U, std::allocator<U>>, std::vector<U>, std::list<U>>::value)
+  for(auto it = ip.cbegin(); it != ip.cend(); it++)
   {
-    for(auto it = ip.cbegin(); it != ip.cend(); it++)
-    {
-      std::cout << *it;
-      if(it != --ip.cend())
-        std::cout << ".";
-    }
-    std::cout << std::endl;
+    std::cout << *it;
+    if(it != --ip.cend())
+      std::cout << ".";
   }
+  std::cout << std::endl;
 }
 
 //!  seq meta-class.
@@ -200,15 +197,16 @@ struct is_all_of<T, U, Args...> : std::false_type {};
 template <typename T, typename... Args>
 struct is_all_of<T, T, Args...> : is_all_of<T, Args...> {};
 
+//!  is_all_of meta-class value alias.
+template <typename T, typename... Args>
+constexpr bool is_all_of_v = is_all_of<T, Args...>::value;
+
 //! Template print_ip taking one tuple-parameter.
 /*!
   \param[in] ip a std::tuple argument, it's ip address.
 */
 template<typename... Args>
-void print_ip(std::tuple<Args...> const& ip)
+std::enable_if_t<is_all_of_v<Args...>, void> print_ip(std::tuple<Args...> const& ip)
 {
-  if(is_all_of<Args...>::value)
-  {
-    std::cout << ip << std::endl;
-  }
+  std::cout << ip << std::endl;
 }
