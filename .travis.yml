@@ -9,12 +9,24 @@ before_script:
   - sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc
   - sudo ln -s /usr/bin/g++-5 /usr/bin/g++
   - g++ -v
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
+      - graphviz
 script:
   - pwd
   - cmake .
   - cmake --build .
   - cmake --build . --target test
   - cmake --build . --target package
+  - doxygen -g print_ip.dox
+  - ( cat print_ip.dox ; echo "PROJECT_NAME=\"Print IP\"" ) | doxygen -
 compiler: g++
 deploy:
   provider: script
