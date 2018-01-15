@@ -7,10 +7,20 @@
 
 var indexSectionsWithContent =
 {
+  0: "giopsv",
+  1: "gis",
+  2: "p",
+  3: "opv",
+  4: "i"
 };
 
 var indexSectionNames =
 {
+  0: "all",
+  1: "classes",
+  2: "files",
+  3: "functions",
+  4: "variables"
 };
 
 function convertToId(search)
