@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/travis/build/flanker-d/otuscpp_04_print_ip/main.cpp
+print_ip.h
+/home/travis/build/flanker-d/otuscpp_04_print_ip/print_ip.h
+
+/home/travis/build/flanker-d/otuscpp_04_print_ip/print_ip.h
+version.h
+/home/travis/build/flanker-d/otuscpp_04_print_ip/version.h
+cstdint
+-
+iostream
+-
+type_traits
+-
+vector
+-
+list
+-
+tuple
+-
+arpa/inet.h
+-
+
+/home/travis/build/flanker-d/otuscpp_04_print_ip/version.h
+
