@@ -60,17 +60,28 @@ constexpr bool is_one_of_v = is_one_of<T, U, Args...>::value;
   \param[in] ip an integer argument.
 */
 template <typename T>
-std::enable_if_t<is_one_of_v<T, std::int8_t, std::uint8_t, std::int16_t, std::uint16_t, std::int32_t, std::uint32_t, std::int64_t, std::uint64_t>, void> print_ip(const T& ip)
+std::enable_if_t<is_one_of_v<T, char, short, int, long>, void> print_ip(const T& ip)
 {
   const int byte_size = 8;
   std::size_t bytes = sizeof(T);
-  for(std::size_t i = 0; i < bytes; i++)
+  for(std::size_t i = bytes - 1; ; i--)
   {
     std::cout << ((ip >> (i * byte_size)) & 0xFF);
-    if(i != ((sizeof(T) - 1)))
-      std::cout << ".";
+    if(i == 0)
+      break;
+    std::cout << ".";
   }
   std::cout << std::endl;
+}
+
+//! Template print_ip taking one argument of std::string type and print it as ip-address (as is).
+/*!
+  \param[in] ip an std::string argument.
+*/
+template <typename T>
+std::enable_if_t<is_one_of_v<T, std::string>, void> print_ip(const T& ip)
+{
+  std::cout << ip << std::endl;
 }
 
 //! Template print_ip taking one argument which is one of std::vector or std::list type and print it as ip-address (bytes sepated by dots).
