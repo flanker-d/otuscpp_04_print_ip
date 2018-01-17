@@ -146,15 +146,17 @@ Functions</h2></td></tr>
 <tr class="memitem:ae64f17a84dc9c7144d1036498ff26fd9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ae64f17a84dc9c7144d1036498ff26fd9">version</a> ()</td></tr>
 <tr class="memdesc:ae64f17a84dc9c7144d1036498ff26fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">version function.  <a href="#ae64f17a84dc9c7144d1036498ff26fd9">More...</a><br/></td></tr>
 <tr class="separator:ae64f17a84dc9c7144d1036498ff26fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf19367a3ba874c55a1071c86cfa774e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aaf19367a3ba874c55a1071c86cfa774e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a><br class="typebreak"/>
-&lt; T, std::int8_t, std::uint8_t, <br class="typebreak"/>
-std::int16_t, std::uint16_t, <br class="typebreak"/>
-std::int32_t, std::uint32_t, <br class="typebreak"/>
-std::int64_t, std::uint64_t &gt;<br class="typebreak"/>
-, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#aaf19367a3ba874c55a1071c86cfa774e">print_ip</a> (const T &amp;ip)</td></tr>
-<tr class="memdesc:aaf19367a3ba874c55a1071c86cfa774e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_ip taking one argument which is one of integer type and print it as ip-address (bytes sepated by dots).  <a href="#aaf19367a3ba874c55a1071c86cfa774e">More...</a><br/></td></tr>
-<tr class="separator:aaf19367a3ba874c55a1071c86cfa774e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363a1ecf9ae3bafde08887de752e4db0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a363a1ecf9ae3bafde08887de752e4db0"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a><br class="typebreak"/>
+&lt; T, char, short, int, long &gt;<br class="typebreak"/>
+, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a363a1ecf9ae3bafde08887de752e4db0">print_ip</a> (const T &amp;ip)</td></tr>
+<tr class="memdesc:a363a1ecf9ae3bafde08887de752e4db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_ip taking one argument which is one of integer type and print it as ip-address (bytes sepated by dots).  <a href="#a363a1ecf9ae3bafde08887de752e4db0">More...</a><br/></td></tr>
+<tr class="separator:a363a1ecf9ae3bafde08887de752e4db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab33e5ba1126ded987b04b779d9f7f208"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab33e5ba1126ded987b04b779d9f7f208"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a><br class="typebreak"/>
+&lt; T, std::string &gt;, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ab33e5ba1126ded987b04b779d9f7f208">print_ip</a> (const T &amp;ip)</td></tr>
+<tr class="memdesc:ab33e5ba1126ded987b04b779d9f7f208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template print_ip taking one argument of std::string type and print it as ip-address (as is).  <a href="#ab33e5ba1126ded987b04b779d9f7f208">More...</a><br/></td></tr>
+<tr class="separator:ab33e5ba1126ded987b04b779d9f7f208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8da9671c7dca68b86537a8de5cf0898c"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename, typename &gt; class T, typename U &gt; </td></tr>
 <tr class="memitem:a8da9671c7dca68b86537a8de5cf0898c"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a><br class="typebreak"/>
 &lt; T&lt; U, std::allocator&lt; U &gt;<br class="typebreak"/>
@@ -238,14 +240,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="aaf19367a3ba874c55a1071c86cfa774e"></a>
+<a class="anchor" id="a363a1ecf9ae3bafde08887de752e4db0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a>&lt;T, std::int8_t, std::uint8_t, std::int16_t, std::uint16_t, std::int32_t, std::uint32_t, std::int64_t, std::uint64_t&gt;, void&gt; print_ip </td>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a>&lt;T, char, short, int, long&gt;, void&gt; print_ip </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>ip</em></td><td>)</td>
@@ -258,6 +260,32 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>an integer argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab33e5ba1126ded987b04b779d9f7f208"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="print__ip_8h.html#a43d3c463d00de7c3fc5d6e1655f691cd">is_one_of_v</a>&lt;T, std::string&gt;, void&gt; print_ip </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>ip</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Template print_ip taking one argument of std::string type and print it as ip-address (as is). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>an std::string argument. </td></tr>
   </table>
   </dd>
 </dl>
