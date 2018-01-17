@@ -11,8 +11,6 @@ before_script:
   - g++ -v
 addons:
   apt:
-    sources:
-      - ubuntu-toolchain-r-test
     packages:
       - doxygen
       - doxygen-doc
